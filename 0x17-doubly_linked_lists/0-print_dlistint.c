@@ -1,8 +1,3 @@
-/*
- * File: 0-print_dlistint.c
- * Auth: Brennan D Baraban
- */
-
 #include "lists.h"
 
 /**
@@ -11,16 +6,17 @@
  *
  * Return: The number of nodes in the list.
  */
+
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t nodes = 0;
+	size_t i = 0;
+	const dlistint_t *tmp = h;
 
-	while (h)
+	while (tmp != NULL)
 	{
-		nodes++;
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+		i++;
 	}
-
-	return (nodes);
+	return (i);
 }
